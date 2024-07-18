@@ -29,8 +29,8 @@
   let numArray = [1,2,3,4,5,6];
  
  let sum = numArray.reduce((acc,curr,i)=>{
-   return acc+curr; //0+1, 1+2 , 3+3 ,6+4, 10+5, 15+6
- }); //initail acc value = 0, if not initialize
+   return acc+curr; //1, 1+2 , 3+3 ,6+4, 10+5, 15+6
+ }); //initail acc value = 0th index, if not initialize
  
 
  let reverse = numArray.reverse(); // return reversed array
