@@ -1,26 +1,28 @@
-//async await / Promise;
- // Promise stages
-  // initial - pending
-  // resolved - fullfiled
-  // reject -  rejected
+console.log("Line 1");
+
+setTimeout(()=>{console.log("Line 3")},0);
 
 const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve('resolved');
-    }, 10000);
+        resolve('Line 6');
 });
 
 promise.then((res)=>{
-  console.log(res);
+  console.log("Line 10 Promise Response", res);
 });
-
 promise.catch((err)=>{
- console.log(err);
-});
+  console.log("Line 13 : Error");
+})
 
-promise.finally(()=>{
-  console.log("Line 22 finally");
-});
+console.log("Line 16");
+
+
+// first priority call stack syncronious program
+// second priority Microtask Queue
+// last prority Task Queue
+
+
+
+setTimeout(()=>{console.log("setTimeout")},0);
 
 console.log('line 25')
 
@@ -41,3 +43,5 @@ Fetch(url);
 let firstNum = 3,secondNum = 5;
 
 console.log('Line 43', firstNum+secondNum);
+
+

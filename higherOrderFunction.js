@@ -5,8 +5,14 @@
 
 // SetTimeout(()=>{},0)
 const array = [1,2,3];
+array.map((elm,i,array)=>{
+  return 1+elm;
+})
 Array.prototype.myMap = myMap;//prototyping
+console.log(new Array);
+//polyfill of array.map() method
 
+debugger
 function myMap(cb){
     let output =[];
     for(let i=0;i<this.length;i++){
@@ -14,6 +20,7 @@ function myMap(cb){
     }
  return output;
 }
+array.myMap((elm) => elm+2)// return modified array
 
 function myFilter(cb){
   let output=[];
@@ -23,6 +30,7 @@ function myFilter(cb){
   }
   return output;
 }
+Array.prototype.myFilter = myFilter;// making myFilter an Array Method
 
 function myReduce(cb,initialValue){
  let acc = initialValue;
@@ -31,3 +39,6 @@ function myReduce(cb,initialValue){
  }
 return acc;
 }
+
+Array.prototype.myReduce = myReduce;
+console.log(new Array);
